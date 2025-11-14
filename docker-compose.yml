@@ -1,6 +1,6 @@
 services:
   n_m3u8dl-re-streamer:
-    build: .
+    image: ataaki/n_m3u8dl-re-streamer:latest
     container_name: n_m3u8dl-re-streamer
     ports:
       - "8080:8080"
