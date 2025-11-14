@@ -54,6 +54,11 @@ COPY --from=builder /app/entrypoint.sh /app/entrypoint.sh
 
 ENV OUTPUT_FILE="output.m3u8"
 ENV N_M3U8DL_RE_PARAMS=""
-ENV RE_LIVE_PIPE_OPTIONS="-c copy -f hls -hls_time 2 -hls_list_size 3 -hls_flags delete_segments"
+ENV RE_LIVE_PIPE_OPTIONS="-c copy"
+ENV N_M3U8DL_RE_LIVE_WAIT_TIME=5
+ENV N_M3U8DL_RE_LIVE_TAKE_COUNT=5
+ENV FFMPEG_HLS_TIME=2
+ENV FFMPEG_HLS_LIST_SIZE=3
+
 
 ENTRYPOINT ["/app/entrypoint.sh"]
